@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bulma Style sheet -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <!-- My personal css style sheet -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- Title for tag -->
+    <title>Javascript Quiz</title>
+  </head>
+  <body>
+    <!-- ================================================================== -->
+    <!-- The section below deals with the landing page -->
+    <div class="landingPage">
+      <div class="columns">
+        <!-- Headline for the landing page -->
+        <div class="column">
+          <!-- class is-size-1 makes the text bigger -->
+          <h1 class="is-size-1">Welcome To My Javascript Quiz</h1>
+        </div>
+      </div>
+      <!-- new row -->
+      <div class="columns">
+        <!-- Extra column for styling (its a bulma thing) -->
+        <div class="column"></div>
+        <div class="column">
+          <!-- Text for the page -->
+          <p>
+            Welcome to my Trivia app! This app was built as my 4th challenge
+            during the UT Austin Coding bootcamp. This app is supposed to
+            showcase everything that we have learned through Unit 4. Press the
+            'Lets play' button to start the quiz, or press the High Scores
+            button to take a look at the leader board. Do you have what it takes
+            to get a high score? Good luck!
+          </p>
+          <br />
+          <!-- This code controls the start quiz button -->
+          <button
+            id="startQuiz"
+            class="button is-medium is-fullwidth is-rounded btn1"
+          >
+            Start Quiz
+          </button>
+          <br />
+          <!-- This button controls the view leaderboard button -->
+          <button id="viewLeaderboard" class="button is-medium is-fullwidth is-rounded btn2">
+            View Leaderboard
+          </button>
+        </div>
+        <!-- Extra column for styling (its a bulma thing) -->
+        <div class="column"></div>
+      </div>
+    </div>
+<!-- =================================================================== -->
+    <!-- This div controls the game screen -->
+    <div class="gameScreen">
+      <!-- This section controls the timer element at the top of the game page -->
+      <div class="columns">
+        <div class="column"></div>
+        <div class="column">
+          <p>Timer: <span id="currentTime">0</span></p>
+        </div>
+        <div class="column"></div>
+      </div>
+
+      <!-- This section controls the score board elemeent at the top of the game page -->
+      <div class="columns">
+        <div class="column"></div>
+        <div class="column">score: <span id="currentScore">0</span></div>
+        <div class="column"></div>
+      </div>
+
+      <!-- This section controls the question number at the top of the game page -->
+      <div class="columns">
+        <div class="column">
+          <h1 id="questionNum" class="is-size-1">
+            Question <span id="questionNumber">0</span>
+          </h1>
+        </div>
+      </div>
+
+      <div class="columns">
+        <!-- Extra column for styling (its a bulma thing) -->
+        <div class="column"></div>
+        <div class="column">
+          <!-- This controls the question text for the game-->
+          <p id="questionText">
+            This is the text of a sample question, this is dasdf adf asdf we
+            odfas dad adsf adf as dasdf asd fad fadsf asdf asdf asdf awe fe adf
+            asdf adf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf adsf asdf
+            asdf asdf adsf sadf asdf asd
+          </p>
+          <br />
+        </div>
+        <!-- Extra column for styling (its a bulma thing) -->
+        <div class="column"></div>
+      </div>
+      <div class="columns">
+        <!-- Extra column for styling (its a bulma thing) -->
+        <div class="column"></div>
+        <div class="column">
+          <!-- Following code deals with the game buttons -->
+          <button id="button1" class="button is-medium is-fullwidth is-rounded btn1">
+            Answer 1
+          </button>
+          <br>
+
+          <button id="button2" class="button is-medium is-fullwidth is-rounded btn2">
+            Answer 2
+          </button>
+          <br>
+
+          <button id="button3" class="button is-medium is-fullwidth is-rounded btn3">
+            Answer 3
+          </button>
+          <br>
+
+          <button id="button4" class="button is-medium is-fullwidth is-rounded btn4">
+            Answer 4
+          </button>
+          <br>
+        </div>
+        <!-- Extra column for styling (its a bulma thing) -->
+        <div class="column"></div>
+      </div>
+    </div>
+
+<!-- ====================================================================== -->
+    <!-- This section controls the game over screen -->
+    <div class="gameOver">
+      <div class="columns">
+        <!-- Extra column for styling (its a bulma thing) -->
+        <div class="column"></div>
+        <div class="column">
+          <p class="is-size-1">Game Over</p>
+        </div>
+        <!-- Extra column for styling (its a bulma thing) -->
+        <div class="column"></div>
+      </div>
+
+      <div class="columns">
+        <!-- Extra column for styling (its a bulma thing) -->
+        <div class="column"></div>
+        <div class="column">
+          <p class="is-size-4">Final Score: <span id="finalScore">0</span></p>
+        </div>
+        <!-- Extra column for styling (its a bulma thing) -->
+        <div class="column"></div>
+      </div>
+
+      <div class="columns">
+        <!-- Extra column for styling (its a bulma thing) -->
+        <div class="column"></div>
+        <div class="column">
+          <p id="congratulations">Congratulations, You have obtained a high score! Please enter your name below to see where you rank on our leaderboard!</p>
+        </div>
+        <!-- Extra column for styling (its a bulma thing) -->
+        <div class="column"></div>
+      </div>
+
+
+      <div class="columns">
+        <!-- Extra column for styling (its a bulma thing) -->
+        <div class="column"></div>
+        <div class="column">
+          <div class="control">
+            <textarea id="playerName" class="textarea is-focused"
+              placeholder="Please enter your name"
+            ></textarea>
+          </div>
+          <button id="submitBtn" class="button is-fullwidth btn1">Submit</button>
+        </div>
+        <!-- Extra column for styling (its a bulma thing) -->
+        <div class="column"></div>
+      </div>
+
+      <div class="columns">
+        <!-- Extra column for styling (its a bulma thing) -->
+        <div class="column"></div>
+        <div class="column">
+          <p>
+            Thank you for taking the time to play my quiz game. You did great!
+            Please check out our leaderboard to see if you made it onto our
+            leaderboard. You can also click the back to home button to return to
+            the home screen.
+          </p>
+        </div>
+        <!-- Extra column for styling (its a bulma thing) -->
+        <div class="column"></div>
+      </div>
+
+      <div class="columns">
+        <!-- Extra column for styling (its a bulma thing) -->
+        <div class="column"></div>
+        <div class="column">
+            <button id="leaderboard" class="button is-fullwidth btn2 is-rounded">Leaderboard</button>
+            <br>
+            <button id="returnToHome" class="button is-fullwidth btn3 is-rounded">Return to home screen</button>
+            <br>
+        </div>
+        <!-- Extra column for styling (its a bulma thing) -->
+        <div class="column"></div>
+      </div>
+    </div>
+
+    <!-- =================================================================== -->
+<!-- This is the leaderboard section of the website -->
+<div class="leaderboard">
+<!-- Welcome to the leaderboard -->
+    <div class="columns">
+        <div class="column">
+            <p class="is-size-2">Welcome to the leaderboard!</p>
+        </div>
+    </div>
+
+<!-- This is the leader table -->
+    <div class="columns">
+         <!-- Extra column for styling (its a bulma thing) -->
+         <div class="column"></div>
+    <!-- Extra column for styling (its a bulma thing) -->
+            <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                <thead>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Score</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1st</td>
+                        <td id="name1">Adam</td>
+                        <td id="score1">100</td>
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td id="name2">Kim</td>
+                        <td id="score2">90</td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td id="name3">Penny</td>
+                        <td id="score3">80</td>
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td id="name4">Olivia</td>
+                        <td id="score4">70</td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td id="name5">Cece</td>
+                        <td id="score5">60</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    <!-- Extra column for styling (its a bulma thing) -->
+        <div class="column"></div>
+    <div class="columns">
+        <div class="column"></div>
+        <div class="column">
+            <button id="backHome" class="button is-fullwidth btn2 is-rounded">Back to Home</button>
+        </div>
+        <div class="column"></div>
+        </div>
+    </div>
+    
+<!-- ==================================================================== -->
+    <footer>
+        <br>
+      Check out my
+      <a href="https://github.com/adamwagh512" target="_blank">Github!</a>
+    </footer>
+    <!-- Jquery script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- My js script -->
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
+

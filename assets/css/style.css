@@ -1,0 +1,57 @@
+/* My color palate */
+:root{
+    --bg: #262225;
+    --b1: #464C59;
+    --b2: #7790A6;
+    --b3: #A3B2BF;
+    --b4: #594F4F;
+}
+/* Styling for body */
+body {
+    background-color: #262225;
+    color: white;
+    text-align: center;
+}
+/* Landing page display */
+.landingPage {
+    display: block;
+}
+/* Landing page display */
+/* .gameScreen {
+    display: none;
+} */
+/* Game over screen display */
+/* .gameOver {
+    display: none;
+} */
+/* Leaderboard display setting */
+/* .leaderboard {
+    display:none;
+} */
+
+/* Styling for buttons */
+.btn1 {
+    background-color: var(--b1);
+    color: white;
+}
+
+.btn2 {
+    background-color: var(--b2);
+    color: white;
+}
+.btn3 {
+    background-color: var(--b3);
+    color: white;
+}
+.btn4 {
+    background-color: var(--b4);
+    color: white;
+}
+/* controls for landingPage div */
+.landingPage {
+    display: block;
+}
+/* Styling for the table */
+.table {
+    background-color: var(--b3);
+}
