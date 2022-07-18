@@ -2,7 +2,6 @@ var timeHolder = document.getElementById("currentTime");
 var timeRemaining = 90;
 var scoreHolder = document.getElementById("currentScore");
 var score = 0;
-
 // ==================================================================
 // this code creates variables and assigns them to website sections
 var homeScreen = document.querySelector(".landingPage");
@@ -34,12 +33,14 @@ var currentQuestion;
 
 // This function starts the game and hides all other sections
 function startGame() {
+  currentQuestion = 0;
   populateQuestions();
   homeScreen.setAttribute("style", "display:none");
   quizScreen.setAttribute("style", "display:block");
   gameOverScreen.setAttribute("style", "display:none");
   highscores.setAttribute("style", "display:none");
-  currentQuestion = 0;
+  timerFunction()
+  scoreHolder.textContent = `Score : ${score}`;
 }
 // This function brings up the leaderboard and hides all other sections
 function highscoreScreen() {
@@ -62,12 +63,17 @@ function gameIsOver() {
   highscores.setAttribute("style", "display:none");
 }
 function timerFunction() {
-  timeRemaining--;
-  timeHolder.textContent = timeRemaining;
-  if (timeRemaining === 0) {
-    gameIsOver();
-  }
+    timer = setInterval(function() {
+        timeRemaining--;
+        timeHolder.textContent = timeRemaining;
+        if (timeLeft <= 0){
+        clearInterval(timer);
+        gameOver();
+         }
+    } , 1000);
 }
+
+  
 // ===================================================================
 // This code assigns event listeners to buttons
 
@@ -175,7 +181,7 @@ function gradeAnswers() {
     score += 10;
     alert("You got it right!");
   } else {
-    timeRemaining = -10;
+    timeRemaining -= 10;
     alert("Bummer, your got it wrong!");
   }
   currentQuestion++;
