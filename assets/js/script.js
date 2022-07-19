@@ -66,9 +66,10 @@ function timerFunction() {
     timer = setInterval(function() {
         timeRemaining--;
         timeHolder.textContent = timeRemaining;
-        if (timeLeft <= 0){
+        if (timeRemaining == 0){
         clearInterval(timer);
-        gameOver();
+        alert('Time is up, Lets see how you did!')
+        gameIsOver();
          }
     } , 1000);
 }

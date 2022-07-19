@@ -16,18 +16,18 @@ body {
 .landingPage {
     display: block;
 }
-/* Landing page display */
-/* .gameScreen {
+/* gamescreen page display */
+.gameScreen {
     display: none;
-} */
+}
 /* Game over screen display */
-/* .gameOver {
+.gameOver {
     display: none;
-} */
+}
 /* Leaderboard display setting */
-/* .leaderboard {
+.leaderboard {
     display:none;
-} */
+}
 
 /* Styling for buttons */
 .btn1 {
